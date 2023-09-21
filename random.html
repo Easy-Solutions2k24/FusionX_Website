@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    .fab{
+        position: fixed;
+        /* bottom:6rem;
+           right:2rem; */
+        bottom: 32px;
+        right: 32px;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        background: rgb(255, 0, 128);
+        box-shadow: 1px 2px 4px gray;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fab:hover {
+        background-color: rgb(255, 103, 179);
+    }
+
+    .fab img {
+        width: 45%;
+        transform: rotate(45deg);
+        transition: 0.4s;
+    }
+
+    .box {
+        position: fixed;
+        bottom: 44px;
+        right: 5px;
+        height: 0px;
+        width: 80px;
+        transition-delay: 0.3s;
+        transition: 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .item {
+        overflow:hidden;
+        border-radius: 50%;
+        transition: 0.4s ease-in;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 1px 1px 3px grey;
+    }
+    .item1{
+        transition-delay: 0.2s;
+        /* right: 5px; */
+        /* background:white; */
+        bottom:50px;
+    }
+    .item2{
+        transition-delay: 0.3s;
+        background:blue;
+        /* right: 5px;*/
+        bottom:100px;
+    }
+    .item:hover{
+        cursor:pointer;
+    }
+    .item:hover img{
+        transform:rotate(360deg);
+        transition:all 0.5s;
+    }
+    .box-active{
+        height: 290px;
+    }
+    .fab-active img{
+        transform: rotate(270deg);
+        width:40%;
+    }
+</style>
+
+<body>
+    <div class="fab">
+            <img src="./Images/plus.png">
+    </div>
+        <div class="box">
+            <a href="#" class="item item1">
+                <!-- <img src="./Images/linkedin.png" alt=""> -->
+            </a>
+            <a href="#" class="item item2">
+                <img src="./Images/github.png alt="">
+            </a>
+        </div>
+</body>
+<script>
+    document.querySelector('.fab').addEventListener('click',function(e){
+        document.querySelector('.box').classList.toggle('box-active');
+        document.querySelector('.fab').classList.toggle('fab-active');
+    });
+</script>
+
+</html>
